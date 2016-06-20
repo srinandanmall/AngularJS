@@ -23,6 +23,9 @@ namespace AngularJS_Todo
             // To disable tracing in your application, please comment out or remove the following line of code
             // For more information, refer to: http://www.asp.net/web-api
             config.EnableSystemDiagnosticsTracing();
+
+            config.Formatters.XmlFormatter.SupportedMediaTypes.Remove(
+                config.Formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml"));
         }
     }
 }
